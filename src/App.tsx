@@ -21,6 +21,7 @@ import HealthDashboard from "./Life/Health/Health";
 import AIAnalytics from "./Life/AIAnalytics/AIAnalytics";
 import LogMonitor from "./Life/LogMonitor/LogMonitor";
 import AgenticAI from "./Life/AgenticAI/AgenticAI";
+import Payment from "./Life/Person/Payment";
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Life />} />
             <Route path="/ai" element={<AI />} />
+            <Route path="/payment" element={<Payment />} /> 
             <Route path="/agentic-ai" element={<AgenticAI />} />
             <Route path="/log-monitor" element={<LogMonitor />} />
             <Route path="/ai-analytics" element={<AIAnalytics />} />  

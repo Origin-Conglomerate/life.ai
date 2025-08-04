@@ -63,6 +63,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Link } from 'react-router-dom'
+import PaymentModal from './Payment';
 
 // Life data and analytics
 const lifeData = {
@@ -159,7 +160,7 @@ export default function Life() {
   const [activeTab, setActiveTab] = useState('overview');
   const [showPredictions, setShowPredictions] = useState(true);
   const metrics = calculateLifeMetrics();
-
+  const [open, setOpen] = useState(false);
   return (
     <div className="relative rounded-3xl overflow-hidden 
       bg-gradient-to-br from-purple-900/20 to-blue-900/20
@@ -392,7 +393,7 @@ export default function Life() {
           </Button>
         </Link>
         <div className="flex flex-col items-center justify-center">
-          <Button variant="outline" className="rounded-full shadow-lg flex flex-col border-4 border-black h-16 w-16">
+          <Button variant="outline" className="rounded-full shadow-lg flex flex-col border-4 border-black h-16 w-16" onClick={() => setOpen(true)}>
             <QrCode className="h-4 w-4" />
             <span className="text-xs">Pay</span>
           </Button>
@@ -410,6 +411,7 @@ export default function Life() {
           </Button>
         </Link>
       </div>
+      <PaymentModal open={open} onOpenChange={setOpen} />
     </div>
   );
 } 
