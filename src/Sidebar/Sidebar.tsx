@@ -27,7 +27,12 @@ import {
   Home,
   ChartLine,
   Activity,
-  Brain
+  Brain,
+  FileText,
+  Film,
+  Users,
+  Globe,
+  Briefcase
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -164,13 +169,13 @@ export default function AppSidebar() {
       ]
     },
     {
-      title: "Home",
+      title: "Health",
       url: "#",
-      icon: Home,
+      icon: Activity,
       items: [
         {
           title: "Dashboard",
-          url: "/home/dashboard"
+          url: "/health/dashboard"
         },
       ]
     },
@@ -186,13 +191,13 @@ export default function AppSidebar() {
       ]
     },
     {
-      title: "Health",
+      title: "Home",
       url: "#",
-      icon: Activity,
+      icon: Home,
       items: [
         {
           title: "Dashboard",
-          url: "/health/dashboard"
+          url: "/home/dashboard"
         },
       ]
     },
@@ -225,13 +230,155 @@ export default function AppSidebar() {
           url: "/social/messaging"
         }
       ]
+    },
+    {
+      title: "Career & Education",
+      url: "#",
+      icon: Briefcase,
+      items: [
+        {
+          title: "Professional Development",
+          url: "/career/professional-development"
+        },
+        {
+          title: "Skill Tracking",
+          url: "/career/skills"
+        },
+        {
+          title: "Learning Resources",
+          url: "/career/learning"
+        },
+        {
+          title: "Job Market",
+          url: "/career/job-market"
+        },
+        {
+          title: "Networking",
+          url: "/career/networking"
+        },
+      ]
+    },
+    {
+      title: "Travel & Exploration",
+      url: "#",
+      icon: Globe,
+      items: [
+        {
+          title: "Trip Planning",
+          url: "/travel/planning"
+        },
+        {
+          title: "Itineraries",
+          url: "/travel/itineraries"
+        },
+        {
+          title: "Travel Log",
+          url: "/travel/log"
+        },
+        {
+          title: "Local Discovery",
+          url: "/travel/discovery"
+        },
+      ]
+    },
+    {
+      title: "Spirituality",
+      url: "#",
+      icon: Heart,
+      items: [
+        {
+          title: "Meditation",
+          url: "/spirituality/meditation"
+        },
+        {
+          title: "Prayer Journal",
+          url: "/spirituality/prayer"
+        },
+        {
+          title: "Values & Ethics",
+          url: "/spirituality/values"
+        },
+        {
+          title: "Gratitude Practice",
+          url: "/spirituality/gratitude"
+        },
+      ]
+    },
+    {
+      title: "Relationships",
+      url: "#",
+      icon: Users,
+      items: [
+        {
+          title: "Family Tree",
+          url: "/relationships/family"
+        },
+        {
+          title: "Partner Connection",
+          url: "/relationships/partner"
+        },
+        {
+          title: "Friends Network",
+          url: "/relationships/friends"
+        },
+        {
+          title: "Important Dates",
+          url: "/relationships/dates"
+        },
+      ]
+    },
+    {
+      title: "Entertainment",
+      url: "#",
+      icon: Film,
+      items: [
+        {
+          title: "Media Library",
+          url: "/entertainment/library"
+        },
+        {
+          title: "Hobby Tracking",
+          url: "/entertainment/hobbies"
+        },
+        {
+          title: "Event Discovery",
+          url: "/entertainment/events"
+        },
+        {
+          title: "Creative Expression",
+          url: "/entertainment/creative"
+        },
+      ]
+    },
+    {
+      title: "Legal & Administrative",
+      url: "#",
+      icon: FileText,
+      items: [
+        {
+          title: "Document Vault",
+          url: "/legal/documents"
+        },
+        {
+          title: "Will & Estate",
+          url: "/legal/estate"
+        },
+        {
+          title: "Important Contacts",
+          url: "/legal/contacts"
+        },
+        {
+          title: "Policy Management",
+          url: "/legal/policies"
+        },
+      ]
     }
   ];
 
   const data = {
     user: {
-      name: "User",
-      email: "user@gmail.com",
+      name: "Neeraj",
+      email: "neeraj@life.ai",
       avatar: "/avatars/shadcn.jpg",
     },
     teams: [
@@ -353,7 +500,7 @@ export default function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroup>
-          <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+          {/* <SidebarGroup className="group-data-[collapsible=icon]:hidden">
             <SidebarGroupLabel>Life</SidebarGroupLabel>
             <SidebarMenu>
               {data.navMain.map((item) => (
@@ -400,7 +547,7 @@ export default function AppSidebar() {
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
-          </SidebarGroup>
+          </SidebarGroup> */}
         </SidebarContent>
         <SidebarFooter>
           <SidebarMenu>
@@ -416,7 +563,7 @@ export default function AppSidebar() {
                         src={data.user.avatar}
                         alt={data.user.name}
                       />
-                      <AvatarFallback className="rounded-lg">U</AvatarFallback>
+                      <AvatarFallback className="rounded-lg">N</AvatarFallback>
                     </Avatar>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-semibold">
@@ -504,7 +651,7 @@ export default function AppSidebar() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{data.user.name}</BreadcrumbPage>
+                  <BreadcrumbPage>Neeraj</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
