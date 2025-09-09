@@ -71,8 +71,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
-
-const Link = ({ to, children, ...props }) => <div {...props}>{children}</div>;
+import { Link } from "react-router-dom"
 const PaymentModal = ({ open, onOpenChange }) => null;
 
 function HumanModel({ modelUrl = "/models/human-anatomy.glb" }) {
